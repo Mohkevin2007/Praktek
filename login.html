@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="logo">
+    	<img src="https://eprakerin.smkn2-bjm.sch.id/vendor/adminlte/dist/img/smkn2.png" alt="" class="logo-smk">
+	</div>
+
+    <h3 align ="center">SELAMAT DATANG DI TECHNOPARK GALLERY </BR> SMK 2 BANJARMASIN</h3>
+
+    <main id="all-content">
+    <div id="login-error">
+      <p id="error"> Kesalahan pada Username <span id="error-msg-second-line"> / Password</span></p>
+    </div>
+    
+    <form id="login">
+      <input type="text" name="username" id="username-field" class="login-form" placeholder="Username">
+      <input type="password" name="password" id="password-field" class="login-form" placeholder="Password">
+      <input type="submit" value="Login" id="submit">
+    </form>
+  
+  </main>
+
+    <script>
+            const loginForm = document.getElementById("login");
+            const loginButton = document.getElementById("submit");
+            const loginErrorMsg = document.getElementById("error");
+
+            loginButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            const username = loginForm.username.value;
+            const password = loginForm.password.value;
+
+            if (username === "userlsp" && password === "smkn2bjm") {
+                alert("You have successfully logged in.");
+                window.location = "pp.php";
+            } else {
+                loginErrorMsg.style.opacity = 1;
+            }
+        })
+    </script>
+</body>
+
+</html>
